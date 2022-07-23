@@ -209,14 +209,15 @@ img {
   color: #888;
   margin-bottom: 0.8rem;
 }
-.form-control.invalid {
-  color: var(--primary-color);
+
+.invalid {
+  color: var(--danger-color);
 }
-.form-control.invalid input {
-  border-color: var(--primary-color);
+.invalid input {
+  border-color: var(--danger-color);
 }
-.form-control .validation {
-  color: var(--primary-color);
+.validation {
+  color: var(--danger-color);
 }
 
 input[type=text],
@@ -228,6 +229,7 @@ textarea {
   display: block;
   width: 100%;
   padding: 0.4rem;
+  margin: 0.3rem 0;
   font-size: 1.2rem;
   border: 1px solid #ccc;
 }
