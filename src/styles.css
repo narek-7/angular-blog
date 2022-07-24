@@ -68,9 +68,9 @@ img {
 }
 
 .card {
-  padding: 1rem;
+  padding: 2rem;
   border: #ccc 1px dotted;
-  margin: 0.7rem 0;
+  margin: 1rem 1rem;
 }
 .card-header {
   display: flex;

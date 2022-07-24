@@ -7,12 +7,7 @@
     }"
   >
     <label for="email">Email:</label>
-    <input
-      id="email"
-      type="email"
-      formControlName="email"
-      placeholder="Enter your email"
-    />
+    <input id="email" type="email" formControlName="email" />
     <div
       *ngIf="form.get('email')?.invalid && form.get('email')?.touched"
       class="validation"
@@ -33,12 +28,7 @@
     }"
   >
     <label for="password">Password:</label>
-    <input
-      id="password"
-      type="password"
-      formControlName="password"
-      placeholder="Enter your password"
-    />
+    <input id="password" type="password" formControlName="password" />
     <div
       *ngIf="form.get('password')?.invalid && form.get('password')?.touched"
       class="validation"
