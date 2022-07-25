@@ -38,7 +38,7 @@ const routes: Routes = [
     FormsModule,
     ReactiveFormsModule,
     RouterModule.forChild(routes),
-    SharedModule
+    SharedModule,
   ],
   providers:[AuthService],
   exports: [RouterModule],
