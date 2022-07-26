@@ -1,3 +1,4 @@
+import { AuthGuard } from './shared/services/auth.guard';
 import { NgModule } from '@angular/core';
 import { CommonModule } from '@angular/common';
 import { FormsModule, ReactiveFormsModule } from '@angular/forms';
@@ -18,9 +19,21 @@ const routes: Routes = [
     children: [
       { path: '', redirectTo: '/admin/login', pathMatch: 'full' },
       { path: 'login', component: LoginPageComponent },
-      { path: 'dashboard', component: DashboardPageComponent },
-      { path: 'edit/:id/edit', component: EditPageComponent },
-      { path: 'create', component: CreatePageComponent },
+      {
+        path: 'dashboard',
+        component: DashboardPageComponent,
+        canActivate: [AuthGuard],
+      },
+      {
+        path: 'edit/:id/edit',
+        component: EditPageComponent,
+        canActivate: [AuthGuard],
+      },
+      {
+        path: 'create',
+        component: CreatePageComponent,
+        canActivate: [AuthGuard],
+      },
     ],
   },
 ];
@@ -40,7 +53,7 @@ const routes: Routes = [
     RouterModule.forChild(routes),
     SharedModule,
   ],
-  providers:[AuthService],
+  providers: [AuthService, AuthGuard],
   exports: [RouterModule],
 })
 export class AdminModule {}

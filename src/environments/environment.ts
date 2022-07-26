@@ -9,14 +9,16 @@ export const environment: Environment = {
   apiKey: 'AIzaSyCoK0saqA-dU9GaOOSiTyH7ukJcA2ahn0Y',
 };
 
-// const firebaseConfig = {
-//   apiKey: 'AIzaSyCoK0saqA-dU9GaOOSiTyH7ukJcA2ahn0Y',
-//   authDomain: 'angular-blog-7cefd.firebaseapp.com',
-//   projectId: 'angular-blog-7cefd',
-//   storageBucket: 'angular-blog-7cefd.appspot.com',
-//   messagingSenderId: '1022558559499',
-//   appId: '1:1022558559499:web:6ca5d4fdd91ce126c2560e',
-// };
+/*
+ const firebaseConfig = {
+   apiKey: 'AIzaSyCoK0saqA-dU9GaOOSiTyH7ukJcA2ahn0Y',
+   authDomain: 'angular-blog-7cefd.firebaseapp.com',
+   projectId: 'angular-blog-7cefd',
+   storageBucket: 'angular-blog-7cefd.appspot.com',
+   messagingSenderId: '1022558559499',
+   appId: '1:1022558559499:web:6ca5d4fdd91ce126c2560e',
+ };
+ */
 
 /*
  * For easier debugging in development mode, you can import the following file
