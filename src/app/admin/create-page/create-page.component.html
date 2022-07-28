@@ -14,13 +14,14 @@
       class="validation"
     >
       <small *ngIf="form.get('title')?.errors?.['required']">
-       Enter the name of the post
+        Enter the name of the post
       </small>
     </div>
   </div>
 
   <div class="form-control">
     <label>Post Content:</label>
+    <quill-editor formControlName="text"></quill-editor>
   </div>
 
   <div
@@ -43,7 +44,7 @@
 
   <button
     type="submit"
-    class="btn btn-block btn-dark"
+    class="btn btn-block btn-primary"
     [disabled]="form.invalid"
   >
     Create a post

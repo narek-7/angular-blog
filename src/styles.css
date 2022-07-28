@@ -1,6 +1,10 @@
 /* You can add global styles to this file, and also import other style files */
 
 @import url("https://fonts.googleapis.com/css?family=Roboto");
+@import "~quill/dist/quill.core.css";
+@import "~quill/dist/quill.snow.css";
+
+
 :root {
   --primary-color: #356ddc;
   --dark-color: #333333;
@@ -220,10 +224,10 @@ img {
   color: var(--danger-color);
 }
 
-input[type=text],
-input[type=email],
-input[type=password],
-input[type=date],
+input[type="text"],
+input[type="email"],
+input[type="password"],
+input[type="date"],
 select,
 textarea {
   display: block;
@@ -234,7 +238,7 @@ textarea {
   border: 1px solid #ccc;
 }
 
-input[type=submit],
+input[type="submit"],
 button {
   font: inherit;
 }
@@ -283,4 +287,4 @@ table th {
 }
 .navbar a:hover {
   color: var(--light-color);
-}/*# sourceMappingURL=styles.css.map */
+} /*# sourceMappingURL=styles.css.map */
