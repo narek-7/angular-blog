@@ -5,7 +5,7 @@ import { Observable, Subject, throwError } from 'rxjs';
 import { catchError, tap } from 'rxjs/operators';
 import { FirebaseAuthResponse, User } from '../../../shared/interfaces';
 
-@Injectable()
+@Injectable({ providedIn: 'root' })
 export class AuthService {
   public error$: Subject<string> = new Subject<string>();
 
@@ -17,7 +17,7 @@ export class AuthService {
       this.logout();
       return null;
     }
-    return localStorage.getItem('fb-token'); 
+    return localStorage.getItem('fb-token');
   }
 
   logout() {
@@ -51,7 +51,7 @@ export class AuthService {
         this.error$.next('Email not found!');
         break;
     }
-    return throwError(error);
+    return throwError(() => error);
   }
 
   private setToken(response: FirebaseAuthResponse | null) {

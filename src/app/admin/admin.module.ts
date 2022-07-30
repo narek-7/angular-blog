@@ -53,7 +53,7 @@ const routes: Routes = [
     RouterModule.forChild(routes),
     SharedModule,
   ],
-  providers: [AuthService, AuthGuard],
+  providers: [AuthGuard],
   exports: [RouterModule],
 })
 export class AdminModule {}
