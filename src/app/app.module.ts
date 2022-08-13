@@ -33,7 +33,11 @@ const INTERCEPTOR_PROVIDER: Provider = {
     ReactiveFormsModule,
     SharedModule,
   ],
-  providers: [INTERCEPTOR_PROVIDER],
+  providers: [{
+    provide: HTTP_INTERCEPTORS,
+    multi: true,
+    useClass: AuthInterceptor,
+  }],
   bootstrap: [AppComponent],
-})
+})    
 export class AppModule {}
