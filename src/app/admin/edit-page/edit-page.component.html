@@ -25,7 +25,12 @@
       <quill-editor formControlName="text"></quill-editor>
     </div>
 
-    <button type="submit" class="btn btn-primary" [disabled]="form.invalid">
+    <button
+      type="submit"
+      class="btn btn-primary"
+      [disabled]="form.invalid"
+      click="editPost()"
+    >
       Edit a post
     </button>
   </form>

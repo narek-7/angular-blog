@@ -11,7 +11,6 @@ import { FormControl, FormGroup, Validators } from '@angular/forms';
   styleUrls: ['./edit-page.component.css'],
 })
 export class EditPageComponent implements OnInit {
-  post: any;
   form: any;
 
   constructor(
@@ -20,18 +19,14 @@ export class EditPageComponent implements OnInit {
   ) {}
 
   ngOnInit(): void {
-    this.route.params
-      .pipe(
-        switchMap((params: Params) => {
-          return this.postsService.getById(params['id']);
-        })
-      )
-      .subscribe((post: Post) => {
+    this.route.params.subscribe((params: Params) => {
+      return this.postsService.getById(params['id']).subscribe((post: Post) => {
         this.form = new FormGroup({
           title: new FormControl(post.title, Validators.required),
-          text: new FormControl(post.text, Validators.required),
+          text: new FormControl(post.text),
         });
       });
+    });
   }
 
   submit() {}
