@@ -1,7 +1,7 @@
 import { environment } from './../../environments/environment';
 import { HttpClient } from '@angular/common/http';
 import { Injectable } from '@angular/core';
-import { Observable } from 'rxjs';
+import { Observable, pipe } from 'rxjs';
 import { map } from 'rxjs/operators';
 import { Post } from './interfaces';
 import { FbCreateResponse } from './interfaces';
@@ -46,6 +46,10 @@ export class PostsService {
         };
       })
     );
+  }
+
+  update(post: Post): Observable<Post> {
+    return this.http.patch<Post>(`${environment.fbDbUrl}/posts/${post.id}.json`, post);
   }
 
   remove(id: string): Observable<void> {

@@ -28,8 +28,7 @@
     <button
       type="submit"
       class="btn btn-primary"
-      [disabled]="form.invalid"
-      click="editPost()"
+      [disabled]="form.invalid || submitted"
     >
       Edit a post
     </button>
