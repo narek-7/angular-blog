@@ -4,6 +4,7 @@ import { PostsService } from 'src/app/shared/posts.service';
 import { Post } from 'src/app/shared/interfaces';
 import { FormControl, FormGroup, Validators } from '@angular/forms';
 import { Subscription } from 'rxjs';
+import { AlertService } from '../shared/services/alert.service';
 
 @Component({
   selector: 'app-edit-page',
@@ -19,12 +20,13 @@ export class EditPageComponent implements OnInit, OnDestroy {
   constructor(
     private postsService: PostsService,
     private route: ActivatedRoute,
-    private router: Router
+    private router: Router,
+    private alertService: AlertService
   ) {}
 
   ngOnInit(): void {
     this.route.params.subscribe((params: Params) => {
-      return this.postsService.getById(params['id']).subscribe((post: Post) => {
+      this.postsService.getById(params['id']).subscribe((post: Post) => {
         this.post = post;
         this.form = new FormGroup({
           title: new FormControl(post.title, Validators.required),
@@ -47,6 +49,7 @@ export class EditPageComponent implements OnInit, OnDestroy {
     this.updateSub = this.postsService.update(post).subscribe(() => {
       this.router.navigate(['/admin', 'dashboard']);
       this.submitted = false;
+      this.alertService.warning('Post has been edited!');
     });
   }
 
