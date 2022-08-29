@@ -1,47 +1,13 @@
-<div class="post">
+<div class="post" *ngIf="post; else loading">
   <div class="header">
-    <h1>Post title</h1>
-
+    <h1>{{ post.title }}</h1>
     <button routerLink="/" class="btn btn-link">Main page</button>
   </div>
-
   <div class="info">
-    <strong>The author</strong>
-    <small>17.07.2022</small>
+    <strong>{{ post.author }}</strong>
+    <small>{{ post.date | date: "medium":"":"en" }}</small>
   </div>
-
-  <div>
-    <p>
-      Lorem ipsum dolor sit amet, consectetur adipisicing elit. A consequuntur
-      cupiditate delectus, illo nam numquam sequi sit voluptas? Animi dicta eius
-      eos exercitationem hic minima mollitia obcaecati possimus quaerat qui
-      quidem, rerum ut voluptatem? Asperiores blanditiis est ipsam, iste
-      perferendis porro soluta. Architecto esse eum excepturi fuga id neque
-      ullam.
-    </p>
-    <p>
-      Lorem ipsum dolor sit amet, consectetur adipisicing elit. A consequuntur
-      cupiditate delectus, illo nam numquam sequi sit voluptas? Animi dicta eius
-      eos exercitationem hic minima mollitia obcaecati possimus quaerat qui
-      quidem, rerum ut voluptatem? Asperiores blanditiis est ipsam, iste
-      perferendis porro soluta. Architecto esse eum excepturi fuga id neque
-      ullam.
-    </p>
-    <p>
-      Lorem ipsum dolor sit amet, consectetur adipisicing elit. A consequuntur
-      cupiditate delectus, illo nam numquam sequi sit voluptas? Animi dicta eius
-      eos exercitationem hic minima mollitia obcaecati possimus quaerat qui
-      quidem, rerum ut voluptatem? Asperiores blanditiis est ipsam, iste
-      perferendis porro soluta. Architecto esse eum excepturi fuga id neque
-      ullam.
-    </p>
-    <p>
-      Lorem ipsum dolor sit amet, consectetur adipisicing elit. A consequuntur
-      cupiditate delectus, illo nam numquam sequi sit voluptas? Animi dicta eius
-      eos exercitationem hic minima mollitia obcaecati possimus quaerat qui
-      quidem, rerum ut voluptatem? Asperiores blanditiis est ipsam, iste
-      perferendis porro soluta. Architecto esse eum excepturi fuga id neque
-      ullam.
-    </p>
-  </div>
+  <quill-view-html [content]="post.text"></quill-view-html>
 </div>
+
+<ng-template #loading>...loading</ng-template>
